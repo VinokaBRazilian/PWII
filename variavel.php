@@ -50,6 +50,15 @@
           
           </li>
 
+
+          <li class="nav-item">
+          
+          <a class="nav-link" href="exerciciosArray.php">
+              Exercicios Array
+            </a>
+          
+          </li>
+          
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -132,6 +141,6 @@ echo $frase1;
 echo "$frase2 é oque tem dentro da variavel";
 ?>
 
-<script src="bootstrap.bundle.min.js"><script/>
+<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>

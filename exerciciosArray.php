@@ -57,9 +57,6 @@
             </a>
           
           </li>
-          
-          </li>
-          
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,142 +115,160 @@
     <div class="col-2"></div>
 </div>
 
-<h1> Estrutura condicional (IF ELSE)</h1>
 
-<p> $inteira = 10 </p>
 
-<p> $nome = "Prof" </p>
-
-<p> $valor = 10.50 </p>
-
-<p> $ativo = true </p>
-<pre>
 <?php
+            //     0       1        2     //
+$frutas = array("maça","laranja","banana");
 
-$inteiro = 10;
+print_r($frutas); // Escreva na tela dos dados basicos do array
 
+var_dump($frutas); // Detalha os dados do array
 
-if($inteiro < 10)
-{
-    echo "<h2> A variavel é menor que 10. </h2>";
+echo count($frutas); // Escreve na tela a quantidade de itens que o array possui
+
+array_push($frutas, "kiwi"); // Adiciona um novo item do array
+
+foreach($frutas as $fruta){
+    echo $fruta;
 }
-else
-if($inteiro > 10)
-{
-    echo "<h2> A variavel é maior que 10. </h2>";
-}
-else{
-    echo "<h2> A variavel é igual a 10. </h2>";
-}
-
-
-
-
-
-
-?>
-</pre>
-
-<pre> if($numero == 10)
-    {
-        echo "o conteudo é 10";
-    }else
-    if($inteira >= 11)
-{
-echo "maior ou igual a 11";
-}
-    else
-    {
-        echo "nao é 10";
-    }
-</pre>
-
-<p> As variaveis string podem ser contados os caracteres e usados no if
-</p>
-
-
-<pre>
-
-if(count($nome) > 10)
-{
-echo "o nome tem mais de 10 caracteres, a quantidade é de " .count($nome);
-}
-</pre>
-<?php
-
-$nome = "Vinicius";
-if( strlen($nome) > 10)
-{
-echo "<h2>Seu nome tem mais que 10 caracteres, a quantidade é de " .strlen($nome)."</h2>";
-
-}
-else
-if( strlen($nome) < 10)
-{
-
-echo "<h2> Seu nome tem menos que 10 caracteres, a quantidade é de " .strlen($nome). "</h2>";
-}
-else
-{
-echo "<h2> Seu nome tem 10 caracteres</h2>";
-}
-
 ?>
 
-<p>
-    Podemos verificar se a variavel $nome esta vazia
-</p>
+/*Exercicio*/
 
-<pre>
+/*Gere um Array que cade indice desse array receba um novo array com as Chaves Nome,
+ Idade e email com seus respectivos valores inventados aleatoriamente*/ 
 
 <?php
 
-$nome = "";
+ $pessoa = array(
 
-if(empty($nome))
+    array(
+        
+        "nome" => "Vinicius", 
+        "idade"=> "21",
+        "email" => "vinietec@etec.sp.gov.br"
+    ),
+
+        array(
+            "nome" => "Pedro", 
+            "idade"=> "17",
+            "email" => "pedroetec@etec.sp.gov.br"
+        ),
+        array(       
+            "nome" => "Leandro", 
+            "idade"=> "25",
+            "email" => "leandroetec@etec.sp.gov.br"
+        ),
+
+        array(
+        
+            "nome" => "Rodrigo", 
+            "idade"=> "20",
+            "email" => "rodrigoetec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Jonas", 
+            "idade"=> "20",
+            "email" => "jonasetec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Marcos", 
+            "idade"=> "21",
+            "email" => "marcosetec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Rebeca", 
+            "idade"=> "17",
+            "email" => "rebeetec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Wylliam", 
+            "idade"=> "27",
+            "email" => "wylliametec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Vitor", 
+            "idade"=> "18",
+            "email" => "vitoretec@etec.sp.gov.br"
+        ),
+        array(
+        
+            "nome" => "Rodolfo", 
+            "idade"=> "24",
+            "email" => "rodolfoetec@etec.sp.gov.br"
+        )
+    );
+  
+    
+echo "<table border='5'>";
+echo "<tr>";
+echo "<td>Nome</td>";
+echo "<td>Idade</td>";
+echo "<td>Email</td>";
+echo "</tr>";
+
+
+ for($i = 0; $i < count($pessoa); $i++)
+ {
+echo "<tr>";
+echo "<td>".$pessoa[$i]["nome"]."</td>";
+echo "<td>".$pessoa[$i]["idade"]."</td>";
+echo "<td>".$pessoa[$i]["email"]."</td>";
+echo "</tr>";
+ }
+echo "</table border>";
+
+echo "<br>";
+
+echo "<table border='5'>";
+echo "<tr>";
+echo "<td>Nome</td>";
+echo "<td>Idade</td>";
+echo "<td>Email</td>";
+echo "</tr>";
+
+
+foreach($pessoa as $a)
+  {
+echo "<tr>";
+echo "<td>".$a["nome"]."</td>";
+echo "<td>".$a["idade"]."</td>";
+echo "<td>".$a["email"]."</td>";
+echo "</tr>";
+ }
+echo "</table border>";
+
+echo "<br>";
+
+
+foreach($pessoa as $a)
 {
-    echo "Sua variavel esta vazia";
+
+echo "<tr>";
+foreach($a as $chave => $valor)
+{
+
+
+    
+}
 
 }
-else
-{
-    echo "Tem coisa nessa variavel $nome";
-}
-
 ?>
-</pre>
-<p>
-    Também podemos comparar string normalmente
-</p>
-<pre>
-if($nome == "Fernando")
-{
-    echo "Nome igual";
-}
-else
-{
-echo "Nomes diferentes";
-}
-</pre>
-<p>
-    Podemos verificar se a variavel é verdadeira ou falsa
-</p>
-
-<pre>
-if($ativo)
-{
-echo "verdadeira";
-}
-else
-{
-echo "falso";
-}
 
 
 
-</pre>
-</div>
 
-<script src="bootstrap.bundle.min.js"><script/>
+
+
+
+
+
+<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
