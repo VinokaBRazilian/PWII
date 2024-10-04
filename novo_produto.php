@@ -45,6 +45,13 @@
                 Salvo no banco com sucesso
                 </div>";
              }
+             else
+             {
+echo "<div class='alert alert-danger'>
+Ocorreu um erro ao salvar
+</div>";
+
+             }
 
             //Executa a lógica do programa
             //Salvar no banco
