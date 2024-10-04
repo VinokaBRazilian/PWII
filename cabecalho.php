@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site</title>
+    <title>Programação Web II</title>
     <link href="bootstrap.min.css" rel="stylesheet"/>
 
 </head>
@@ -71,6 +71,17 @@
 
           <li class="nav-item">
           
+
+          <li class="nav-item">
+          
+          <a class="nav-link" href="produtos.php">
+              Produtos
+            </a>
+          
+          </li>
+
+          <li class="nav-item">
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown

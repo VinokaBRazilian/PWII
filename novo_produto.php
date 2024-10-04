@@ -1,8 +1,12 @@
-<?php include "cabecalho.php" ?>
-
-<?php>
-
-
+<?php include "cabecalho.php"; ?>
+ 
+<?php
+    if (isset ( $_POST["nome"] )
+        && isset ( $_POST["valor"])
+        && isset ( $_POST["codigobarras"])
+        && isset ( $_POST["datavalidade"])
+        )
+    {
         $nome = $_POST["nome"];
         $valor = $_POST["valor"];
         $codigobarras = $_POST["codigobarras"];
@@ -25,11 +29,28 @@
         }
         else
         {
+            include "conexao.php";
+            
+            $nome = $_POST["nome"];
+            $valor = str_replace( ",", ".", $_POST["valor"] );
+            $codigobarras = $_POST["codigobarras"];
+            
+            $query = "INSERT INTO produtos(DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO)
+             VALUES('$nome', $valor, '$codigobarras', 1)";
+
+             $resultado = $conexao->query($query);
+             if($resultado)
+             {
+                echo "<div class='alert alert-success'>
+                Salvo no banco com sucesso
+                </div>";
+             }
+
             //Executa a lógica do programa
             //Salvar no banco
-            echo "<h1>Salvo no Banco com sucesso!</h1>";
+          
         }
-    
+    }
     else
         {
             $nome = "";
@@ -37,8 +58,31 @@
             $codigobarras = "";
             $datavalidade = "";
         }
-
-
-        ?>
-
-<?php include "rodape.php"?>
+ 
+?>
+ 
+<form action="novo_produto.php" method="post">
+ <br>
+    <label>Nome</label>
+    <input type="text" name="nome" value="<?php echo $nome; ?>"/>
+    <br>
+ 
+    <label>Valor</label>
+    <input type="number" name="valor" value="<?php echo $valor; ?>"/>
+    <br>
+ 
+    <label>Código de Barras</label>
+    <input type="text" name="codigobarras" value="<?php echo $codigobarras; ?>"/>
+    <br>
+ 
+    <label>Data de Validade</label>
+    <input type="date" name="datavalidade" value="<?php echo $datavalidade; ?>" />
+    <br>
+ 
+    <button type='submit' class='btn btn-success'>
+        Enviar os Dados
+    </button>
+ 
+</form>
+ 
+<?php include "rodape.php"; ?>
