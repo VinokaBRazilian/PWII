@@ -9,6 +9,7 @@ $senha = "";
 $banco = "pw_bd";
 
 $script = "
+
 CREATE DATABASE PW_BD;
 USE PW_BD;
 CREATE TABLE PRODUTOS(
@@ -19,6 +20,11 @@ VALOR DECIMAL(10,2) NOT NULL,
 IMAGEM VARCHAR(50),
 ATIVO BIT NOT NULL
 );
+INSERT INTO PRODUTOS
+(DESCRICAO,CODIGO_BARRAS,VALOR,ATIVO)VALUES('Amendoin Verde','789728640096',5.50,1);
+INSERT INTO PRODUTOS
+(DESCRICAO,CODIGO_BARRAS,VALOR,ATIVO)VALUES('Goiabinha Saborosa','789045700725',1.50,1);
+
 ";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);

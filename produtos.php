@@ -20,10 +20,35 @@ else
 {
 
     $pesquisa = "";
+    include "conexao.oho";
+    $sql = "Select Id, Descricao, Valor, Codigo_barras from Produtos order by Id desc";
+    $resultado = $conexao->query($sql);
+
+    if($resultado->num_rows > 0)
+    {
+
+while($row = $resultado->fetch_assoc())
+{
+echo "<tr>";
+echo "<tr>" . $row["Id"] . "</td>";
+echo "<tr>" . $row["Descricao"] . "</td>"; 
+echo "<tr>" . $row["Valor"] . "</td>";
+echo "<tr> <a href='editar_produto.php?id=$row[Id]' class='btn btn warning'>Editar</a>";
+echo "<a class='btn btn-danger'>Excluir</a></td>";
+echo "<tr>";
+}
+else{
+
+  echo"<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
 
 }
 
-?>
+}
+echo->close();
+    }
+
+
+
 
 <br>
 
