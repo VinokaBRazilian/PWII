@@ -67,29 +67,55 @@ Ocorreu um erro ao salvar
         }
  
 ?>
- 
-<form action="novo_produto.php" method="post">
- <br>
-    <label>Nome</label>
-    <input type="text" name="nome" value="<?php echo $nome; ?>"/>
+<br>
+ <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+            Cadastrar novo produto
+            </div>
+
+    <div class="card-body">
+            <form action="novo_produto.php" method="post">
+    </form>
+       
+    
     <br>
+
  
-    <label>Valor</label>
-    <input type="number" name="valor" value="<?php echo $valor; ?>"/>
-    <br>
- 
-    <label>Código de Barras</label>
-    <input type="text" name="codigobarras" value="<?php echo $codigobarras; ?>"/>
-    <br>
- 
-    <label>Data de Validade</label>
-    <input type="date" name="datavalidade" value="<?php echo $datavalidade; ?>" />
-    <br>
- 
+
+         <div class="col-12">
+         <label>Nome</label>
+         <input class="form-control" type="text" name="nome" value="<?php echo $nome; ?>"/>
+         <br>
+         </div>
+
+            <div class="col-12">
+            <label>Valor</label>
+            <input class="form-control" type="number" name="valor" value="<?php echo $valor; ?>"/>
+            </div>
+
+            <br>
+     
+        <div class="col-12">       
+        <label>Código de Barras</label>
+        <input class="form-control" type="text" name="codigobarras" value="<?php echo $codigobarras; ?>"/>
+        <br> 
+        <label>Data de Validade</label>
+        <input class="form-control" type="date" name="datavalidade" value="<?php echo $datavalidade; ?>" />
+        <br>
+        </div>
+            
+  
     <button type='submit' class='btn btn-success'>
         Enviar os Dados
     </button>
  
+   
 </form>
  
+
+</div>
+</div>  
 <?php include "rodape.php"; ?>

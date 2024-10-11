@@ -9,20 +9,34 @@ $pesquisa = $_GET["pesquisa"];
 if(empty($pesquisa))
 {
 //Se a variavel estiver vazia executa aqui
+include "conexao.php";
+$sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
+$resultado = $conexao->query($sql);
+$conexao->close();
+
 }
 else
 {
 //Aqui vai a logica da pesquisa
+include "conexao.php";
+$sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem
+from Produtos
+where Descricao like '%$pesquisa%'
+order by Id desc";
+$resultado = $conexao->query($sql);
+$conexao->close();
 }
 
 }
 else
 {
+  
 
     $pesquisa = "";
-    include "conexao.oho";
+    include "conexao.php";
     $sql = "Select Id, Descricao, Valor, Codigo_barras from Produtos order by Id desc";
     $resultado = $conexao->query($sql);
+    $conexao->close();
 
     if($resultado->num_rows > 0)
     {
@@ -33,24 +47,25 @@ echo "<tr>";
 echo "<tr>" . $row["Id"] . "</td>";
 echo "<tr>" . $row["Descricao"] . "</td>"; 
 echo "<tr>" . $row["Valor"] . "</td>";
-echo "<tr> <a href='editar_produto.php?id=$row[Id]' class='btn btn warning'>Editar</a>";
-echo "<a class='btn btn-danger'>Excluir</a></td>";
+echo "<tr> <a href='editar_produto.php?Id=$row[Id]' class='btn btn warning'>Editar</a>";
+echo "<a href='excluir_produto.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
 echo "<tr>";
 }
+    }
 else
-{
+  {
 
   echo"<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
 
-}
+  }
 
-}
 $conexao->close();
 
 }
 
 
 
+?>
 
 <br>
 
@@ -98,6 +113,7 @@ $conexao->close();
   </thead>
 
   <tbody>
+    
     <?php for($i=0;$i<25;$i++)
     {
  echo "<tr>
