@@ -37,15 +37,17 @@ echo "<tr> <a href='editar_produto.php?id=$row[Id]' class='btn btn warning'>Edit
 echo "<a class='btn btn-danger'>Excluir</a></td>";
 echo "<tr>";
 }
-else{
+else
+{
 
   echo"<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
 
 }
 
 }
-echo->close();
-    }
+$conexao->close();
+
+}
 
 
 
