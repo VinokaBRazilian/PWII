@@ -1,26 +1,21 @@
-
-
-<?php
-
-
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "pw_bd";
+<?php 
+$servidor = "localhost"; 
+$usuario = "root"; 
+$senha = ""; 
+$banco = "PW_BD"; 
 
 $script = "
-
-CREATE DATABASE PW_BD;
-USE PW_BD;
-CREATE TABLE PRODUTOS(
-ID INT PRIMARY KEY AUTO_INCREMENT,
-DESCRICAO VARCHAR(150) NOT NULL,
-CODIGO_BARRAS VARCHAR(25) NOT NULL,
-VALOR DECIMAL(10,2) NOT NULL,
-IMAGEM VARCHAR(50),
-ATIVO BIT NOT NULL
-);
-    
+    CREATE DATABASE PW_BD;
+    USE PW_BD;
+    CREATE TABLE PRODUTOS (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        DESCRICAO VARCHAR(150) NOT NULL,
+        CODIGO_BARRAS VARCHAR(25) NOT NULL,
+        VALOR DECIMAL(10,2) NOT NULL,
+        IMAGEM VARCHAR(50),
+        ATIVO BIT NOT NULL
+    );
+    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Amendoin Verde', '7898728640096', 5.50, 1);
     INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Goiabinha Saborosa', '7898045700725', 1.50, 1);
     INSERT INTO produtos (DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO) VALUES
     ('Camiseta Estampada - 100% Algodão', 49.90, '1234567890123', 1),
@@ -43,36 +38,12 @@ ATIVO BIT NOT NULL
     ('Aspirador de Pó - Sem Fio', 599.90, '1234567890140', 1),
     ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1),
     ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1);
-
+   
 ";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
-if($conexao->connect_error)
-{
-die("Falha na conexão: " . $conexao->connect_error);
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
