@@ -1,7 +1,6 @@
-<?php include "cabecalho.php"; ?>
+<?php include "cabecalho.php" ?>
 
-<?php 
-
+<?php
 
 if( isset($_GET["pesquisa"]) )
 {
@@ -40,38 +39,25 @@ else
 
 
 ?>
-<br>
-<?php
-if(isset($_GET["erro"]) && !empty($_POST["erro"]))
-{
-echo "<div class='alert alert-danger'>";
-echo $_GET["erro"];
-echo "</div>";
 
-}
-?>
+
 <br>
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                Lista de Produtos
+                Categorias
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-2">
-                        <a href="novo_produto.php" class="btn btn-success" >
-                            Novo Produto
-                        </a>
-                    </div>
-                    <div class="col-8">
+                <div class="row">                    
+                    <div class="col-12">
                         <form action="produtos.php" method="post">
                             <div class="input-group mb-3">
                                 <input type="text" 
                                         name="pesquisa" 
                                         value="<?php echo $pesquisa; ?>"  
                                         class="form-control" 
-                                        placeholder="Digite sua pesquisa aqui..." />
+                                        placeholder="Pesquise pela categoria..." />
 
 
                                 <button class="btn btn-primary" type="submit">
@@ -89,10 +75,9 @@ echo "</div>";
                         <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Descrição</th>
-                                <th scope="col">Valor</th>
-                                <th scope="col">Código de barras</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Valor</th>                                
                                 <th scope="col">Imagem</th>
                                 <th scope="col"></th>
                             </tr>
@@ -105,11 +90,8 @@ echo "</div>";
                                     echo "<tr>";
                                     echo "<td>" . $row["Id"] . "</td>";
                                     echo "<td>" . $row["Descricao"] . "</td>";
-                                    echo "<td>" . $row["Valor"] . "</td>";
-                                    echo "<td>" . $row["Codigo_barras"] . "</td>";
-                                    echo "<td>" . $row["Imagem"] . "</td>";
-                                    echo "<td><a href='editar_produto.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
-                                    echo "<a href='excluir_produto.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
+                                    echo "<td>" . $row["Valor"] . "</td>";                                   
+                                    echo "<td>" . $row["Imagem"] . "</td>";                                    
                                     echo "</tr>";
                                 }
                             } else {
@@ -127,4 +109,6 @@ echo "</div>";
     </div>
 </div>
 
-<?php include "rodape.php"; ?>
+
+
+<?php include "rodape.php" ?>
