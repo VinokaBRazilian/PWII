@@ -1,8 +1,6 @@
 <?php include "cabecalho.php"; ?>
 
 <?php 
-
-
 if( isset($_GET["pesquisa"]) )
 {
     $pesquisa = $_GET["pesquisa"];
@@ -10,7 +8,7 @@ if( isset($_GET["pesquisa"]) )
     {
        //Se a variavel estiver vazia executa aqui 
        include "conexao.php";
-       $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id asc";
+       $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
        $resultado = $conexao->query($sql);
        
        $conexao->close();
@@ -22,7 +20,7 @@ if( isset($_GET["pesquisa"]) )
         $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem 
                 from Produtos  
                 where Descricao like '%$pesquisa%' || Codigo_Barras = '$pesquisa'
-                order by Id asc";
+                order by Id desc";
         $resultado = $conexao->query($sql);
         
         $conexao->close();
@@ -32,8 +30,9 @@ else
 {
     $pesquisa = "";
     include "conexao.php";
-    $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id asc";
-    $resultado = $conexao->query($sql);   
+    $sql = "Select Id, Descricao, Valor, Codigo_barras, Imagem from Produtos order by Id desc";
+    $resultado = $conexao->query($sql);
+   
     $conexao->close();
     
 }
@@ -42,13 +41,12 @@ else
 ?>
 <br>
 <?php
-if(isset($_GET["erro"]) && !empty($_POST["erro"]))
-{
-echo "<div class='alert alert-danger'>";
-echo $_GET["erro"];
-echo "</div>";
-
-}
+    if(isset($_GET["erro"]) && !empty($_GET["erro"]) )
+    {
+        echo "<div class='alert alert-danger'>";
+        echo $_GET["erro"];
+        echo "</div>";
+    }
 ?>
 <br>
 <div class="row">
@@ -65,7 +63,7 @@ echo "</div>";
                         </a>
                     </div>
                     <div class="col-8">
-                        <form action="produtos.php" method="post">
+                        <form action="produtos.php" method="get">
                             <div class="input-group mb-3">
                                 <input type="text" 
                                         name="pesquisa" 
