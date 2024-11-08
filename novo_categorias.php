@@ -1,6 +1,6 @@
-<?php include "cabecalho.php" ?>
-
 <?php include "cabecalho.php"; ?>
+<br>
+<br>
 
 <?php
     if (isset ( $_POST["nome"] )
@@ -75,7 +75,3 @@
 
 
 
-
-
-
-<?php include "rodade.php" ?>

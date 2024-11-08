@@ -1,4 +1,4 @@
-<?php include "cabecalho.php" ?>
+<?php include "cabecalho.php"; ?>
 
 <?php
 
@@ -46,4 +46,4 @@
     <button type="submit">Salvar alterações</button>
 </form>
 
-<?php include "rodape.php" ?>
+<?php include "rodape.php"; ?>
