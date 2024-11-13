@@ -1,7 +1,6 @@
 
 <?php include "cabecalho.php"; ?>
 
-<br>
 <h1> Variaveis em PHP</h1>
 <p> $numero = 10; </p>
 <p> $string = "Vini"; </p>

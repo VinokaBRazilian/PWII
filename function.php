@@ -1,5 +1,7 @@
 <?php include "cabecalho.php"; ?>
 
+
+
 <h1> Funções Nativas</h1>
 <p>Funções nativas são fuções que o próprio php
     nos fornece, como  por exemplo:
