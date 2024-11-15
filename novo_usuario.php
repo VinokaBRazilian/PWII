@@ -26,7 +26,7 @@
             $senha = $_POST["senha"];
             
             // Cria a query de inserção no banco de dados
-            $query = "INSERT INTO usuarios (LOGIN, SENHA) VALUES ('$login', '$senha')";
+            $query = "INSERT INTO usuarios (LOGIN, SENHA, ATIVO) VALUES ('$login', '$senha', 1)";
 
             // Executa a query e armazena o resultado
             $resultado = $conexao->query($query);
@@ -60,7 +60,7 @@
         <div class="card">
             <div class="card-header">
                 <!-- Título do formulário -->
-                Cadastrar novo usuário
+                Novo Usuário
             </div>
             <div class="card-body">
                 <!-- Formulário para cadastrar novo usuário, usando o método POST para enviar os dados -->
