@@ -9,7 +9,7 @@
             $sql = "UPDATE Categorias SET Nome = '$_POST[Nome]' WHERE Id = $_POST[Id]";
             $resultado = $conexao->query($sql);
             if ($resultado) {
-                //lógica para mensagem de sucesso
+                echo "<div class='alert alert-success'>Alteração salva no Banco com sucesso</div> "
             }                                    
             else {
                 //caso o update dê false

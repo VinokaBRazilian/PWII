@@ -60,19 +60,19 @@
         <div class="card">
             <div class="card-header">
                 <!-- Título do formulário -->
-                Novo Usuário
+                Novo Cadastro
             </div>
             <div class="card-body">
                 <!-- Formulário para cadastrar novo usuário, usando o método POST para enviar os dados -->
                 <form action="novo_usuario.php" method="post">
 
                     <!-- Campo para inserir o login -->
-                    <label>Nome</label>
+                    <label>Digite um nome de Usuario</label>
                     <input scope="row" class="form-control" type="text" name="login" value="<?php echo $login; ?>"/>
                     <br>
 
                     <!-- Campo para inserir a senha -->
-                    <label>Senha</label>
+                    <label>Crie uma Senha</label>
                     <input scope="row" class="form-control" type="text" name="senha" value="<?php echo $senha; ?>"/>
                     <br>
                     

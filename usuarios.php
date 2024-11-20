@@ -2,24 +2,43 @@
 
 <?php
 
-    // Condição que irá verificar se as variáveis 'login' e 'senha' existem no formulário enviado
-    if (isset($_POST["login"]) && isset($_POST["senha"]))
-    {
+if(empty($_POST['login']) && empty($_POST['senha'])
+)
+{
 
-        if(empty($_POST["login"]) || empty($_POST["senha"]))
-        {
-            echo "<br><div class='alert alert-danger'>Os campos login e senha não podem ficar em branco!</div>";
-        }
-        else
-        {    
-        $login = $_POST["login"];
-        $senha = $_POST["senha"];
+$login = null;
+$senha = null;
 
-        $loginR = "SELECT  "    
+}
+else
+if (isset($_POST["login"]) && isset($_POST["senha"])) {
+    $login = $_POST["login"];
+    $senha = $_POST["senha"];
 
-        }
+    include "conexao.php";
+
+    // Query para buscar login e senha diretamente
+    $sql = "SELECT login, senha FROM usuarios WHERE login = '$login' AND senha = '$senha'";
+    $result = $conexao->query($sql);    
+
+    // Verifica se existe um registro com as credenciais fornecidas
+    if ($result->num_rows > 0) {       
+        header("Location: permissao.php");
+        exit();
+    } else {
+        // Credenciais incorretas
+        echo "<br><div class='alert alert-danger'>Usuário ou senha incorretos, tente novamente!</div>";
     }
+}
+   else
+        {
+            
+            $login = "";
+            $senha = "";
+        }
 
+            
+   
 ?>
 
 <div class="row">
@@ -50,6 +69,9 @@
                     <button type='submit' class='btn btn-success'>
                         Enviar os Dados
                     </button>
+        <br>
+        <br>
+                    <a href="novo_usuario.php">Não tem cadastro?</a>
                 </form>
             </div>
         </div>

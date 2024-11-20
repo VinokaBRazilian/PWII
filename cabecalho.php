@@ -21,7 +21,7 @@
     </button>
     <!-- Links de navegação -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: 100%;>
         <!-- Link para a página inicial -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php" style="color: #fff;">Página Inicial</a>

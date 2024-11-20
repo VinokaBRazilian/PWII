@@ -3,7 +3,7 @@
 
 
 <h1> Funções Nativas</h1>
-<p>Funções nativas são fuções que o próprio php
+<p>Funções nativas são funções que o próprio php
     nos fornece, como  por exemplo:
         a função isset(), // Verifica se existe a variável
         a função empty(), // Verifica a variável está vazia

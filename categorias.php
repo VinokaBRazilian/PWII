@@ -1,4 +1,4 @@
-<?php include "cabecalho.php" ?>
+<?php include "cabecalho.php"; ?>
 
 <?php
     if(isset ($_GET["pesquisa"]))
