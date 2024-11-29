@@ -31,7 +31,7 @@ else
     $pesquisa = "";
     
     include "conexao.php";
-       $sql = "Select Id, Descricao  from Permissoes order by Id ASC";
+       $sql = "Select Id, Descricao from Permissoes order by Id ASC";
        $resultado = $conexao->query($sql);
        
        $conexao->close();
